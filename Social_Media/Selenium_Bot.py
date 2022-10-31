@@ -77,7 +77,7 @@ class Log_in:
 
         #Options for our driver
         options =webdriver.ChromeOptions()
-        options.add_argument('headless')
+        #options.add_argument('headless')
         options.add_argument('--disable-blink-feature=AutomationControlled')
         options.add_argument('--flags#enable-new-usb-backend')
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -140,14 +140,14 @@ class Scrape:
             data['Post'].append(post)
             #Scraping likes in two different locations
             try:
-                likes = driver.find_element(By.XPATH, value = '//div[@class="_7UhW9   xLCgt        qyrsm KV-D4               fDxYl    T0kll "]/span')
+                likes = driver.find_element(By.XPATH, value = '//div[@class="_aacl _aaco _aacw _aacx _aada _aade"]/span')
             except:
-                likes = driver.find_element(By.XPATH, value = '//div[@class="_7UhW9   xLCgt        qyrsm KV-D4           uL8Hv        T0kll "]/span')
+                likes = driver.find_element(By.XPATH, value = '//div[@class="_aacl _aaco _aacw _aacx _aad6 _aade"]/span')
             finally:
                 likes = likes.text
                 data['Likes'].append(likes)
             #Scrape Hashtags
-            hashtags = driver.find_elements(By.XPATH, value = '//a[@class=" xil3i"]')
+            hashtags = driver.find_elements(By.XPATH, value = '//a[@class="x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd"]')
             hashtags = [hashtag.text for hashtag in hashtags]
             data['Hashtags'].append(hashtags)
             #Scrape Timestamp
@@ -155,7 +155,7 @@ class Scrape:
             time_attribute = date_location.get_attribute('datetime')
             data['Time'].append(time_attribute)
             #Scrape post caption
-            text_box = driver.find_element(By.XPATH, value = '//div[@class="MOdxS "]/span')
+            text_box = driver.find_element(By.XPATH, value = '//div[@class="_a9zs"]/span')
             caption = text_box.text
             data['Caption'].append(caption)
             #Clicking Next post and sleeping for (1-3) seconds
@@ -164,7 +164,7 @@ class Scrape:
 
         #Creating dataframe and saving as csv as search_amount.csv
         df = pd.DataFrame.from_dict(data)
-        df.to_csv(f'C:/Users/bboul/Desktop/{self.search}_{self.amount}.csv')
+        df.to_csv(f'C:/Users/bboul/Desktop/{self.search}_{self.amount}.csv', index=False)
 
 if __name__=='__main__':
     root = tk.Tk()
