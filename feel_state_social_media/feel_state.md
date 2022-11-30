@@ -4,7 +4,7 @@ I encountered a client who needed help increasing the social media following for
 
 
 <div align="center">
-    <img width="600" src="screen_shots/Insta_Bot_.png">
+    <img width="800" src="screen_shots/Insta_Bot_.png">
 </div>
 
 ### Larger Accounts
@@ -12,7 +12,7 @@ I encountered a client who needed help increasing the social media following for
 After the raw data had been collected, I cleaned the data using Excel. This included resolving issues such as removing duplicated rows, cleaning time/date stamps, and adding more columns for further analysis, such as Day of Week, Percentile, Caption word count, Hashtag count, and Account Name. From the [Jupyter Notebook](Social_Notebook.ipynb) included we have established the data for likes is very heavily skewed to the left. Another important thing to mention is that I have chosen to keep outliers in the data because although they are outliers, they still happening naturally. The data set in total is 2509 rows and 9 columns.
 
 <div align="center">
-    <img width="600" src="screen_shots/excel_screenshot.png">
+    <img width="1000" src="screen_shots/excel_screenshot.png">
 </div>
 
 Using excel I calculated the 25%, 50%, 75% and 90% percentile to better understand the distrubition of the data.
